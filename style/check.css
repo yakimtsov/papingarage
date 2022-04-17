@@ -1,0 +1,35 @@
+.check{
+    background-color: black;
+    padding: 30px;
+}
+.check__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.search-input{
+    width: 400px;
+    height: 40px;
+    font-size: 30px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.search-title{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+.check-search{
+    display: flex;
+    align-items: center;
+}
+.check-search img{
+    width: 50px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 30px;
+}

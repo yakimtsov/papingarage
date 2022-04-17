@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PapinGarage workshop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/add.css">
+    <link rel="stylesheet" href="./style/check.css">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="header__navigator">
+                    <div class="header__logo">
+                        <img src="./img/logo.png" alt="">
+                    </div>
+                    <div class="header__navbar">
+                        <ul>
+                            <li class="header__li"><a href="index.html" class="header__link">Головна</a></li>
+                            <li class="header__li"><a href="index.html" class="header__link">Інформація</a></li>
+                            <li class="header__li"><a href="index.html" class="header__link">Контакти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add">
+            <div class="container">
+                <div class="add-title">Роботи, які провели з автомобілем</div>
+                <form id="formWork">
+                    <div>
+                        <label class="label__add" for="vin">Vin-code вашого авто</label>
+                        <input class="input__add" type="text" name="vin" id="vinWork" placeholder="Вкажіть Vin-code вашого авто" required>
+                    </div>
+                    <div>
+                        <label class="label__add" for="work">Додайте роботи, запчастини і тд.</label>
+                        <textarea class="text__add" name="work" id="work" cols="100%" rows="10" class="add-textarea"></textarea>
+                    </div>
+                    <div>
+                        <label class="label__add" for="mile-work">Пробіг на якому провели ремонт</label>
+                        <input class="input__add" name="mile-work" type="text" id="mile-work">
+                    </div>
+                    <button id="SubmitWork" class="header__button">Add work</button>
+                </form>
+            
+                <h1 class="add-title">Додай своє авто до бази данних</h1>
+                <form id="form-add" class="form">
+                    <div class="form__first-line">
+                        <div>
+                            <label class="label__add"  for="manufacturer">Марка вашого авто</label>
+                            <select class="input__add" name="manufacturer" id="manufacturer">
+                                <option value="Acura">Acura</option>
+                                <option value="Audi">Audi</option>
+                                <option value="BMW">BMW</option>
+                                <option value="Chevrolet">Chevrolet</option>
+                                <option value="Citroen">Citroen</option>
+                                <option value="Fiat">Fiat</option>
+                                <option value="Ford">Ford</option>
+                                <option value="Honda">Honda</option>
+                                <option value="Hyundai">Hyundai</option>
+                                <option value="Infiniti">Infiniti</option>
+                                <option value="Kia">Kia</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Lexus">Lexus</option>
+                                <option value="Mazda">Mazda</option>
+                                <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                <option value="Mini">Mini</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="Nissan">Nissan</option>
+                                <option value="Opel">Opel</option>
+                                <option value="Peugeot">Peugeot</option>
+                                <option value="Renault">Renault</option>
+                                <option value="Skoda">Skoda</option>
+                                <option value="Subaru">Subaru</option>
+                                <option value="Suzuki">Suzuki</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Volkswagen">Volkswagen</option>
+                                <option value="Volvo">Volvo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="label__add" for="model">Модель вашого авто</label>
+                            <input class="input__add" type="text" name="model" id="model" placeholder="Вкажіть модель вашого авто">
+                        </div>  
+                        <div>
+                            <label class="label__add" for="mod">Модифікація вашого авто</label>
+                            <input class="input__add" type="text" name="mod" id="mod" placeholder="Вкажіть об'єм двигуна на вашому авто">
+                        </div>
+                    </div>
+                    <div class="form__second-line">
+                        <div>
+                            <label class="label__add" for="year">Рік виготовлення вашого авто</label>
+                            <input class="input__add" type="text" name="year" id="year" placeholder="Вкажіть рік виготовлення вашого авто">
+                        </div>
+                        <div>
+                            <label class="label__add" for="number">Номер вашого авто</label>
+                            <input class="input__add" type="text" name="number" id="number" placeholder="Вкажіть держ.номер вашого авто">
+                        </div> 
+                        <div>
+                            <label class="label__add" for="vin">Vin-code вашого авто</label>
+                            <input class="input__add" type="text" name="vin" id="vin" placeholder="Вкажіть Vin-code вашого авто" required>
+                        </div>
+                    </div>
+                    <div class="form__third-line">
+                        <div>
+                            <label class="label__add" for="mile">Пробіг вашого авто</label>
+                            <input class="input__add" type="text" name="mile" id="mile" placeholder="Вкажіть пробіг на вашому авто">
+                        </div>
+                        <button type="submit" id="submitData" class="header__button">Додати авто до бази данних</button>
+                    </div>
+                </form>
+            </div>   
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__logo">
+                        <img src="./img/logo.png" alt="">
+                    </div>
+                    <div>
+                        <form class="footer-form">
+                            <div class="footer__input">
+                                <label for="footer-email">При виникненні проблемі напишіть нам!</label>
+                                <input type="email" name="footer-email" id="footer-email">
+                            </div>
+                            <button class="header__button" id="footer-button">Send Email</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body> 
+</html>
+<script type="module" src="./script/add.js"></script>

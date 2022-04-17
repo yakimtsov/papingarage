@@ -1,0 +1,71 @@
+.add{
+    padding: 5px 0;
+    background-color: black;
+}
+.add-title{
+    color: #fff;
+    text-align: center;
+    font-size: 42px;
+    margin: 100px 0;
+}
+.form__first-line, .form__second-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+.input__add{
+    padding-left: 10px;
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin: 10px 0;
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+}
+.text__add{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    margin: 30px 0;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+.input__add::placeholder{
+    font-size: 12px;
+    color: black;
+    font-weight: 500;
+}
+.label__add{
+    font-size: 22px;
+    color: #fff;
+}
+.form__third-line{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+#list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+.carsCard{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.carsCard p{
+    color: black;
+}
+.carsCard p:not(:last-child){
+    margin-bottom: 20px;
+}
