@@ -9,7 +9,6 @@ const firebaseConfig = {
   };
 
   firebase.initializeApp(firebaseConfig);
-  const preloader = document.querySelector('.lds-ripple');
 
   function addItemToContainer (manufacturer, model, mod, year, number, vin, mile, option, mileWork){
     const containerCheck = document.getElementById('list');
@@ -34,7 +33,7 @@ const firebaseConfig = {
     numberElem.innerHTML = `Державний номер: ${number}`;
     vinElem.innerHTML = `Vin code: ${vin}`;
     mileElem.innerHTML = `Пробіг автомобіля: ${mile}`;
-    optionElem.innerHTML = `Роботи які провели ${option}`;
+    optionElem.innerText = `Роботи які провели:\n\n${option}`;
     mileWorkElem.innerHTML = `Пробіг ${mileWork}`;
 
     ElemContainer.appendChild(manufacturerElem);
@@ -52,6 +51,7 @@ const firebaseConfig = {
     containerCheck.append(ElemContainer)
 
 }
+
 function FetchAllData(){
     firebase.database().ref(`cars/`).once('value',
     function(snapshot){
@@ -63,27 +63,30 @@ function FetchAllData(){
                 var yearSel = ChildSnapshot.val().year;
                 var numberSel = ChildSnapshot.val().number;
                 var vinSel = ChildSnapshot.val().vin;
+                console.log(vinSel)
                 var mileSel = ChildSnapshot.val().mile;
-                addItemToContainer(manufacturerSel, modelSel, modSel, yearSel, numberSel, vinSel, mileSel)
-            }
-        )
-    })
+                
+            firebase.database().ref(`cars/${vinSel}/options/`).once('value',
+            function(snapshot){
+                snapshot.forEach(
+                    function(ChildSnapshot){
+                        var optionSel = ChildSnapshot.val().option;
+                        var mileWorkSel = ChildSnapshot.val().mileWork;
+                        console.log(ChildSnapshot.val().option)
+                        addItemToContainer(manufacturerSel, modelSel, modSel, yearSel, numberSel, vinSel, mileSel,optionSel,mileWorkSel)
+                    }
+                )
+            })
+                    }
+
+                )
+            })
+    
     
 };
 
-function fetchWorkData (){
-    firebase.database().ref(`cars/options/`).once('value',
-    function(snapshot){
-        snapshot.forEach(
-            function(ChildSnapshot){
-                var optionSel = ChildSnapshot.val().option;
-                var mileWorkSel = ChildSnapshot.val().mileWork;
-                
-                addItemToContainer(optionSel,mileWorkSel)
-            }
-        )
-    })
-}
+
+const preloader = document.querySelector('.lds-ripple');
 
 const showPreloader = (show) => {
     if(show){
@@ -101,8 +104,7 @@ const searchBtn = document.getElementById('search-btn');
 
 const renderCarCards = () =>{
     showPreloader(true);
-    FetchAllData();
-    fetchWorkData();    
+    FetchAllData();  
     showPreloader(false);
 }
 
