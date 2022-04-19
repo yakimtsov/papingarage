@@ -63,26 +63,20 @@ function FetchAllData(){
                 var yearSel = ChildSnapshot.val().year;
                 var numberSel = ChildSnapshot.val().number;
                 var vinSel = ChildSnapshot.val().vin;
-                console.log(vinSel)
                 var mileSel = ChildSnapshot.val().mile;
                 
-            firebase.database().ref(`cars/${vinSel}/options/`).once('value',
-            function(snapshot){
-                snapshot.forEach(
-                    function(ChildSnapshot){
-                        var optionSel = ChildSnapshot.val().option;
-                        var mileWorkSel = ChildSnapshot.val().mileWork;
-                        console.log(ChildSnapshot.val().option)
-                        addItemToContainer(manufacturerSel, modelSel, modSel, yearSel, numberSel, vinSel, mileSel,optionSel,mileWorkSel)
-                    }
-                )
-            })
-                    }
-
-                )
-            })
-    
-    
+    firebase.database().ref(`cars/${vinSel}/options/`).once('value',
+    function(snapshot){
+        snapshot.forEach(
+            function(ChildSnapshot){
+                var optionSel = ChildSnapshot.val().option;
+                var mileWorkSel = ChildSnapshot.val().mileWork;
+                addItemToContainer(manufacturerSel, modelSel, modSel, yearSel, numberSel, vinSel, mileSel,optionSel,mileWorkSel)
+            }
+        )
+    })
+    })
+}) 
 };
 
 
