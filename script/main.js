@@ -36,16 +36,8 @@ const firebaseConfig = {
     optionElem.innerText = `Роботи які провели:\n\n${option}`;
     mileWorkElem.innerHTML = `Пробіг ${mileWork}`;
 
-    ElemContainer.appendChild(manufacturerElem);
-    ElemContainer.appendChild(modelElem);
-    ElemContainer.appendChild(modElem);
-    ElemContainer.appendChild(yearElem);
-    ElemContainer.appendChild(numberElem);
-    ElemContainer.appendChild(vinElem);
-    ElemContainer.appendChild(mileElem);
-
-    workContainer.appendChild(optionElem)
-    workContainer.appendChild(mileWorkElem)
+    ElemContainer.append(manufacturerElem, modelElem, modElem, yearElem, numberElem, vinElem, mileElem);
+    workContainer.append(optionElem, mileWorkElem)
     ElemContainer.append(workContainer)
 
     containerCheck.append(ElemContainer)
@@ -80,6 +72,28 @@ function FetchAllData(){
 };
 
 
+
+const formId = document.getElementById('formId')
+const search = document.getElementById('search');
+const searchBtn = document.getElementById('search-btn');
+
+const handlerSubmit = (e) => {
+    e.preventDefault()
+
+    const vin = search.value
+    console.log(vin)
+}
+
+formId.addEventListener('submit', handlerSubmit)
+
+// const renderCarCards = () =>{
+//     showPreloader(true);
+//     FetchAllData();  
+//     showPreloader(false);
+// }
+
+// renderCarCards()
+
 const preloader = document.querySelector('.lds-ripple');
 
 const showPreloader = (show) => {
@@ -89,17 +103,3 @@ const showPreloader = (show) => {
         preloader.style.display = 'none'
     }
 }
-
-
-const search = document.getElementById('search');
-const searchBtn = document.getElementById('search-btn');
-
-
-
-const renderCarCards = () =>{
-    showPreloader(true);
-    FetchAllData();  
-    showPreloader(false);
-}
-
-renderCarCards()
